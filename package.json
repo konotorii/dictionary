@@ -1,0 +1,21 @@
+{
+  "name": "dictionary",
+  "version": "0.0.0",
+  "description": "Express API Server for checking if a string is a word or not.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dictionary",
+    "express",
+    "typescript",
+    "api",
+    "rest"
+  ],
+  "author": "Konotorii",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^5.5.2"
+  }
+}
