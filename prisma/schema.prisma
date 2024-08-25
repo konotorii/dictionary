@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model dictionary {
+  id       String @id @unique @default(cuid())
+  language String
+
+  words word[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+}
+
+model word {
+  id           String     @id @unique @default(cuid())
+  dictionary   dictionary @relation(fields: [dictionaryId], references: [id])
+  dictionaryId String
+
+  description String
+  value       String @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+}
